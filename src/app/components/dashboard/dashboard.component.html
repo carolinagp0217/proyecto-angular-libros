@@ -1,0 +1,10 @@
+<div class="container card border-dark mt-5 text-center justify-content-center" style="max-width: 40rem;" *ngIf="ngAuthService.userState as user">
+    <div class="card-header">{{(user.displayName) ? user.displayName : 'User'}}</div>
+    <div class="card-body">
+        <img class="mx-auto d-block mr-5 img-thumbnail rounded-circle " width="100 " src="{{(user.photoURL) ? user.photoURL : '/assets/user.jpg'}} " alt="{{user.displayName}} ">
+        <p class="card-text ">User ID: <strong>{{user.uid}}</strong></p>
+        <p class="card-text ">Email: <strong>{{user.email}}</strong></p>
+    </div>
+    <a class="btn btn-primary mt-1" routerLink="/list">Back to List</a>
+    <a class="btn btn-danger mt-2 mb-4" (click)="ngAuthService.SignOut()">Sign Out</a>
+</div>

@@ -1,0 +1,48 @@
+<div class="card bg-light mb-3 mt-5">
+    <div class="card-header">
+        <h4>BOOKS DETAILS</h4>
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item ">
+                <h5>Title:</h5>
+                <p>{{books.titulo}}</p>
+            </li>
+            <li class="list-group-item">
+                <h5>Author:</h5>
+                <p>{{books.autor}}</p>
+            </li>
+            <li class="list-group-item">
+                <h5>Description:</h5>
+                <p class="text-justify">{{books.descripcion}}</p>
+            </li>
+            <li class="list-group-item">
+                <h5> Edition:</h5>
+                <p>{{books.edicion}}</p>
+            </li>
+            <li class="list-group-item">
+                <h5> ISBN:</h5>
+                <p>{{books.isbn}}</p>
+            </li>
+            <li class="list-group-item">
+                <h5> Resume:</h5>
+                <p class="text-justify">{{books.resumen}}</p>
+            </li>
+            <li class="list-group-item">
+                <h5> Serie:</h5>
+                <p>{{books.serie}}</p>
+            </li>
+            <li class="list-group-item">
+                <h5> Category:</h5>
+                <p>{{books.tema}}</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-success m-1 btn-sm" (click)="onGoToEdit(books)">Edit</button>
+        <button type="button " class="btn btn-danger m-1 btn-sm " (click)="onGoToDelete(books.id)">Delete</button>
+    </div>
+</div>
+
+<button type="button " class="btn btn-secondary m-2 mt-3" routerLink="/list">Back to list</button>

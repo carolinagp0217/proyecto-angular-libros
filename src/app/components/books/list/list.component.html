@@ -1,0 +1,33 @@
+<div class="table-responsive">
+    <legend class="text-center mt-4 mb-3">BOOK LIST</legend>
+
+    <form class="d-flex col-md-5">
+        <input type="text" class="form-control me-sm-2" id="search" placeholder="Search" #search>
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit" (click)="onGoToSearch(search.value)">Search</button>
+    </form>
+
+    <table class="table table-hover mt-3">
+        <thead>
+            <tr class="table-dark ">
+                <th scope="row ">NAME</th>
+                <th scope="row ">DESCRIPTION</th>
+                <th scope="row ">FRONT COVER</th>
+                <th class="d-done d-sm-block" scope="row ">ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of booksList">
+                <td>{{item.titulo}}</td>
+                <td>{{item.descripcion}}</td>
+                <td class="media-body">
+                    <img class="align-self-start mr-5 img-thumbnail col-md-2" src="{{'/assets/dummy.jpg'}}">
+                </td>
+                <td class="btn-group d-done d-sm-block" role="group">
+                    <button type="button" class="btn btn-outline-primary m-1" (click)="onGoToDetails(item)">Details</button>
+                    <button type="button" class="btn btn-outline-success m-1" (click)="onGoToEdit(item)">Edit</button>
+                    <button type="button" class="btn btn-outline-danger m-1" (click)="onGoToDelete(item)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
